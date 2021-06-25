@@ -1,0 +1,15 @@
+{
+  "chromeWebSecurity": false,
+  "reporter": "cypress-mochawesome-reporter",
+  "reporterOptions": {
+    "charts": true,
+    "embeddedScreenshots": false,
+    "reportDir": "cypress/report",
+    "reportPageTitle": "Toptal - Box API automation"
+  },
+  "video": false,
+  "screenshotsFolder": "images",
+  "env": {
+    "API_BASE_URL": "https://account.box.com/api"
+  }
+}
