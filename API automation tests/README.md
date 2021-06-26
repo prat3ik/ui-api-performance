@@ -78,6 +78,10 @@ _**NOTE:**_ **Detailed steps and test cases can be found here: https://docs.goog
 
 ## How to run
 ### Setup
+```
+git clone
+cd A
+```
 **Clone the repo and Install the project dependencies:** `npm install` or `npm ci`
 
 ### Execution
@@ -100,4 +104,4 @@ Example of Bug report can be found here:
 https://docs.google.com/spreadsheets/d/1KXMoSVISg9dfRq-KWd9IoIfsKgXcma38we06L4B874E/edit#gid=2088996798
 
 ------------
-#### Video of successful execution: https://drive.google.com/file/d/1oXNNnzQWXwr-v3YcUDK_hVH-Z34Q9Prx/
+#### Video of successful execution: https://drive.google.com/file/d/1rpu7zhI3DtpFHXkrSLKmmJmVi1plcTDk/
