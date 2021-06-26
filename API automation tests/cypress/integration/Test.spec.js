@@ -8,7 +8,7 @@ describe("TOPTAL - Box API automation tests", function () {
      * On before method we are calling the GET Request Authorization API on browser,
      * which will return the code on the response URI.
      */
-    before("Generate access_token and refresh_token", function () {
+    before("GET: Authorize user (via browser)", function () {
         // Move to app.box.com and do login with valid user
         cy.visit("https://app.box.com/");
         cy.get("#login-email").type(Cypress.env('box_email')).should("have.value", 'pratikquora2@gmail.com');
@@ -29,7 +29,7 @@ describe("TOPTAL - Box API automation tests", function () {
      * Using the code which obtained from 'before' hook we are calling
      * POST: Get Access & Refresh Token to generate the access and refresh tokens.
      */
-    it("POST: Get Access & Refresh Token", function () {
+    it("POST: Request access token", function () {
         const code = this.authenticatedUrl.split('?code=')[1];
 
         const reqData = {
@@ -50,7 +50,7 @@ describe("TOPTAL - Box API automation tests", function () {
         })
     });
 
-    describe("1) POST: Create folder", function () {
+    describe("1) POST: Create new folder", function () {
         const reqData = function (reqUrl, authToken, folderName, parentFolderId) {
             return {
                 method: 'POST',
@@ -180,7 +180,7 @@ describe("TOPTAL - Box API automation tests", function () {
         });
     });
 
-    describe("2) GET: Get folder information", function () {
+    describe("2) GET: Get that folder information", function () {
         const reqData = function (reqUrl, authToken) {
             return {
                 method: 'GET',
@@ -260,7 +260,7 @@ describe("TOPTAL - Box API automation tests", function () {
 
     });
 
-    describe("3) PUT: Update folder", function () {
+    describe("3) PUT: Update the folder name", function () {
         const reqData = function (reqUrl, authToken, newFolderName) {
             return {
                 method: 'PUT',
@@ -343,7 +343,7 @@ describe("TOPTAL - Box API automation tests", function () {
         });
     });
 
-    describe("4) GET: Get folder information", function () {
+    describe("4) GET: Get that folder information", function () {
         const reqData = function (reqUrl, authToken) {
             return {
                 method: 'GET',
@@ -379,7 +379,7 @@ describe("TOPTAL - Box API automation tests", function () {
 
     });
 
-    describe("5) DELETE: Delete folder", function () {
+    describe("5) DELETE: Delete that folder", function () {
         const reqData = function (reqUrl, authToken) {
             return {
                 method: 'DELETE',
@@ -453,8 +453,7 @@ describe("TOPTAL - Box API automation tests", function () {
         });
     });
 
-
-    describe("6) GET: Get folder information", function () {
+    describe("6) GET: Get deleted folder information", function () {
         const reqData = function (reqUrl, authToken) {
             return {
                 method: 'GET',
@@ -488,5 +487,4 @@ describe("TOPTAL - Box API automation tests", function () {
             });
         });
     });
-
 });
