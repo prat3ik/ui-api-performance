@@ -1,0 +1,16 @@
+stages:
+  - test
+  
+test:
+  image: node:14.15.3
+  stage: test
+  services:
+    - selenium/standalone-chrome
+  script:
+    - npm install
+    - npm test
+  artifacts:
+    when: on_failure
+    paths:
+      - TestResults/screenshots/*.jpeg
+    expire_in: 1 day

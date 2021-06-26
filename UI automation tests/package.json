@@ -1,0 +1,29 @@
+{
+  "name": "toptal-juiceshop-ui-tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "chromedriver": "^90.0.0",
+    "dotenv": "^8.2.0"
+  },
+  "devDependencies": {
+    "@microsoft/edge-selenium-tools": "^3.6.1",
+    "chai": "^4.2.0",
+    "mocha": "^8.3.2",
+    "selenium-webdriver": "^4.0.0-alpha.7"
+  },
+  "scripts": {
+    "test": "npx mocha --file ./tests/Libs/mocha.hooks.js tests/Specs/juice.shop.spec.js  --reporter-options reportDir=TestResults,reportFilename=test-report,autoOpen=true --timeout 1800000",
+    "test:ci": "TEST_ENV=CI npx mocha --file ./tests/Libs/mocha.hooks.js tests/Specs/juice.shop.spec.js  --reporter-options reportDir=TestResults,reportFilename=test-report,autoOpen=true --timeout 1800000"
+  },
+  "keywords": [
+    "e2e",
+    "automation"
+  ],
+  "author": "Pratik Patel",
+  "license": "ISC"
+}
