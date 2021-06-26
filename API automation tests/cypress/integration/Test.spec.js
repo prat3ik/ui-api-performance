@@ -73,9 +73,8 @@ describe("TOPTAL - Box API automation tests", function () {
             const authToken = window.var_access_token;
             const folderName = generalFolderName;
             const parentFolderId = Cypress.env('parent_folder_id');
-            const timeInMillisBeforeRequest = Date.now();
 
-            cy.wait(1000).request(reqData(reqUrl, authToken, folderName, parentFolderId)).then(res => {
+            cy.request(reqData(reqUrl, authToken, folderName, parentFolderId)).then(res => {
                 // Check status code
                 expect(res.status).to.eq(201);
                 expect(res.statusText).to.eq('Created');
@@ -88,24 +87,12 @@ describe("TOPTAL - Box API automation tests", function () {
                 expect(res.headers['content-type']).to.eq('application/json');
                 expect(res.headers['strict-transport-security']).to.eq('max-age=31536000');
                 expect(res.headers['transfer-encoding']).to.eq('chunked');
-                const dateFromAPI = res.headers['date'];
-                const timeInMillisFromAPIResponse = new Date(dateFromAPI).getTime();
-                let timeInMillisNow = Date.now();
-                expect(timeInMillisFromAPIResponse > timeInMillisBeforeRequest, `Resource creation timestamp: ${timeInMillisFromAPIResponse} > Before request timestamp: ${timeInMillisBeforeRequest}`).to.true;
-                expect(timeInMillisNow > timeInMillisFromAPIResponse, `Current timestamp: ${timeInMillisNow} > Resource creation timestamp: ${timeInMillisFromAPIResponse}`).to.true;
 
                 // Check response body
                 expect(res.body['name']).to.eq(folderName);
                 expect(res.body['type']).to.eq('folder');
                 expect(res.body['created_by']['login']).to.eq(Cypress.env('box_email'));
                 expect(res.body['parent']['name']).to.eq(Cypress.env('parent_folder_name'));
-                const contentCreationDateFromAPI = res.body['content_created_at'];
-                window.content_created_date = contentCreationDateFromAPI;
-                const timeInMillisForContentCreation = new Date(contentCreationDateFromAPI).getTime();
-                timeInMillisNow = Date.now();
-                expect(timeInMillisForContentCreation > timeInMillisBeforeRequest, `Content creation timestamp: ${timeInMillisForContentCreation} > Before request timestamp: ${timeInMillisBeforeRequest}`).to.true;
-                expect(timeInMillisNow > timeInMillisForContentCreation, `Current timestamp: ${timeInMillisNow} > Content creation timestamp: ${timeInMillisForContentCreation}`).to.true;
-
             });
         });
 
@@ -114,9 +101,8 @@ describe("TOPTAL - Box API automation tests", function () {
             const authToken = window.var_access_token;
             const folderName = generalFolderName;
             const parentFolderId = Cypress.env('parent_folder_id');
-            const timeInMillisBeforeRequest = Date.now();
 
-            cy.wait(1000).request(reqData(reqUrl, authToken, folderName, parentFolderId)).then(res => {
+            cy.request(reqData(reqUrl, authToken, folderName, parentFolderId)).then(res => {
                 // Check status code
                 expect(res.status).to.eq(409);
                 expect(res.statusText).to.eq('Conflict');
@@ -127,11 +113,6 @@ describe("TOPTAL - Box API automation tests", function () {
                 expect(res.headers['content-type']).to.eq('application/json');
                 expect(res.headers['strict-transport-security']).to.eq('max-age=31536000');
                 expect(res.headers['transfer-encoding']).to.eq('chunked');
-                const dateFromAPI = res.headers['date'];
-                const timeInMillisFromAPIResponse = new Date(dateFromAPI).getTime();
-                const timeInMillisNow = Date.now();
-                expect(timeInMillisFromAPIResponse > timeInMillisBeforeRequest, "Resource creation timestamp > Before request timestamp").to.true;
-                expect(timeInMillisNow > timeInMillisFromAPIResponse, 'Current timestamp > Resource creation timestamp').to.true;
 
                 // Check response body
                 expect(res.body['type']).to.eq('error');
@@ -197,9 +178,6 @@ describe("TOPTAL - Box API automation tests", function () {
             const authToken = window.var_access_token;
 
             cy.request(reqData(reqUrl, authToken)).then(res => {
-                cy.log(res.body)
-                cy.log(res.headers)
-                cy.log(res.headers['content-type'])
                 // Check status code
                 expect(res.status).to.eq(200);
                 // Check response headers
@@ -214,7 +192,6 @@ describe("TOPTAL - Box API automation tests", function () {
                 expect(res.body['type']).to.eq('folder');
                 expect(res.body['id']).to.eq(window.var_folder_id);
                 expect(res.body['name']).to.eq(generalFolderName);
-                expect(res.body['created_at']).to.eq(window.content_created_date);
             });
         });
 
@@ -278,9 +255,8 @@ describe("TOPTAL - Box API automation tests", function () {
         it("Update folder name by passing valid folder_id", function () {
             const reqUrl = `${Cypress.env('API_BASE_URL')}/2.0/folders/${window.var_folder_id}`;
             const authToken = window.var_access_token;
-            const timeInMillisBeforeRequest = Date.now();
 
-            cy.wait(1000).request(reqData(reqUrl, authToken, newFolderName)).then(res => {
+            cy.request(reqData(reqUrl, authToken, newFolderName)).then(res => {
                 // Check status code
                 expect(res.status).to.eq(200);
 
@@ -295,13 +271,6 @@ describe("TOPTAL - Box API automation tests", function () {
                 expect(res.body['type']).to.eq('folder');
                 expect(res.body['id']).to.eq(window.var_folder_id);
                 expect(res.body['name']).to.eq(newFolderName);
-                expect(res.body['created_at']).to.eq(window.content_created_date);
-
-                const contentModifiedDate = res.body['content_modified_at'];
-                const timeInMillisFromAPIResponse = new Date(contentModifiedDate).getTime();
-                const timeInMillisNow = Date.now();
-                expect(timeInMillisFromAPIResponse > timeInMillisBeforeRequest, `Resource creation timestamp: ${timeInMillisFromAPIResponse} > Before request timestamp: ${timeInMillisBeforeRequest}`).to.true;
-                expect(timeInMillisNow > timeInMillisFromAPIResponse, `Current timestamp: ${timeInMillisNow} > Resource creation timestamp: ${timeInMillisFromAPIResponse}`).to.true;
             })
         });
 
@@ -309,7 +278,7 @@ describe("TOPTAL - Box API automation tests", function () {
             const reqUrl = `${Cypress.env('API_BASE_URL')}/2.0/folders/-1`;
             const authToken = window.var_access_token;
 
-            cy.wait(1000).request(reqData(reqUrl, authToken, newFolderName)).then(res => {
+            cy.request(reqData(reqUrl, authToken, newFolderName)).then(res => {
                 // Check status code
                 expect(res.status).to.eq(404);
 
@@ -373,7 +342,6 @@ describe("TOPTAL - Box API automation tests", function () {
                 expect(res.body['type']).to.eq('folder');
                 expect(res.body['id']).to.eq(window.var_folder_id);
                 expect(res.body['name']).to.eq(newFolderName);
-                expect(res.body['created_at']).to.eq(window.content_created_date);
             });
         });
 
