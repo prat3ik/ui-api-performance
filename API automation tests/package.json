@@ -1,15 +1,15 @@
 {
-  "name": "test-cyp",
+  "name": "API automation testing",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "cypress run",
-    "headed": "cypress open",
-    "headless": "cypress run -b chrome --headless"
+    "cy:open": "cypress open",
+    "cy:headless": "cypress run -b chrome --headless"
   },
   "keywords": [],
-  "author": "Pratik Patel <pratikquora@gmail.com>",
+  "author": "Pratik Patel <pratikchanchpara@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "cypress": "^7.5.0"
