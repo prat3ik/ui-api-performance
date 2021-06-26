@@ -16,7 +16,14 @@ _**NOTE:**_ _An Access token is a string that enables Box to verify that a reque
 - Official API documentation: https://developer.box.com/reference/
 
 ## Dependencies
-Please ensure you have stable version of Node installed (_Recommanded : v12.1.0_): https://nodejs.org/en/download/
+Please ensure you have stable version of Node installed (_Recommanded : v12.1.0_): https://nodejs.org/en/download/ and also check npm is installed.
+```
+node -v // should return valid node version
+```
+```
+npm -v // should return valid npm version
+```
+![node](https://drive.google.com/uc?export=view&id=1sKamal7sIuDL8IUiL3AUYzoC9jWtP3UD)
 
 ## Libraries and plugins used
 - `cypress`: [API and UI automation library](https://www.npmjs.com/package/cypress)
