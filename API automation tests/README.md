@@ -78,11 +78,13 @@ _**NOTE:**_ **Detailed steps and test cases can be found here: https://docs.goog
 
 ## How to run
 ### Setup
-```
-git clone
-cd A
-```
 **Clone the repo and Install the project dependencies:** `npm install` or `npm ci`
+```
+git clone https://git.toptal.com/screening/Pratik-K-Patel.git 
+cd API\ automation\ tests/ 
+npm install 
+```
+
 
 ### Execution
 - **To run the tests on your terminal**
