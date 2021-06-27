@@ -2,7 +2,8 @@ class TestConfig {
     //Constructor
     constructor() {
         this.executionMode = "remote";
-        this.juiceShopBaseUrl = "https://juice-shop.herokuapp.com";
+        this.prodBaseUrl = "https://juice-shop.herokuapp.com/";
+        this.stageBaseUrl = "http://juice-shop-web-sample.herokuapp.com/";
         this.defaultElementTimeout = 30000; //30 seconds
         this.defaultPageLoadTimeout = 30000; //30 seconds
         this.defaultTestTimeout = 300000; //5 Minutes
@@ -16,7 +17,8 @@ class TestConfig {
 
     //Properties
     executionMode;
-    juiceShopBaseUrl;
+    prodBaseUrl;
+    stageBaseUrl;
     browser;
     isHeadless;
     browserStackEnabled;

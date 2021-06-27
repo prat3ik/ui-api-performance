@@ -40,10 +40,6 @@ class LoginPage extends BasePage {
         return new CheckBox(SelectorType.CSS, `#rememberMe`);
     }
 
-    getLoginWithGoogleButton() {
-        return new Button(SelectorType.CSS, `#loginButtonGoogle`);
-    }
-
     getNotYetACustomerLink() {
         return new WebComponent(SelectorType.CSS, `a[href="#/register"]`);
     }
@@ -77,9 +73,6 @@ class LoginPage extends BasePage {
 
         const isRememberMeCheckBoxDisplayed = await this.getRememberMeCheckBox().isElementAvailable();
         expect(isRememberMeCheckBoxDisplayed).is.true;
-
-        const isLoginWithGoogleButtonDisplayed = await this.getLoginWithGoogleButton().isElementAvailable();
-        expect(isLoginWithGoogleButtonDisplayed).is.true;
 
         const isNotYetACustomerLinkDisplayed = await this.getNotYetACustomerLink().isElementAvailable();
         expect(isNotYetACustomerLinkDisplayed).is.true;

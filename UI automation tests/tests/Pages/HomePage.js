@@ -6,7 +6,8 @@ class HomePage extends BasePage {
 
     constructor() {
         super();
-        this.url = browser.getJuiceShopBaseUrl();
+        this.url = browser.getBaseUrl();
+        console.info(`Base URL: ${this.url}`)
     }
 
     //--------------------- Elements ------------------------//

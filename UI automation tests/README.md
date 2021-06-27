@@ -11,6 +11,7 @@
   - Cloud platform execution support (BrowserStack)
   - CI integration (GitlabCI)
   - Screenshot capture on test failures
+  - Different test environment support (prod/stage)
 
 ## What is Juice shop website?
 - It is demo website and ideal candidate for automation testing.
@@ -66,11 +67,24 @@ npm install
   - `npm test`
 
 #### 2. Browserstack (Remote):
-- **To run the tests on Browserstack chrome browser**
-  - On `testconfig.json`, set below parameters
+- **To run the tests on Chrome on MacOS X OS**
+  - Set below parameters on `testconfig.json`
     ```
-     "browserStackEnabled": true
-     "isHeadless": false`
+    "isHeadless": false,
+    "browserStackEnabled": true,
+    "browserStackOS": "OS X",
+    "browserStackOSVersion": "Big sur"
+     ```
+  - `npm test`
+  - Go to your browserstack ac. and you can observe the output
+  
+- **To run the tests on Chrome on Windows 10**
+  - Set below parameters
+    ```
+    "isHeadless": false,
+    "browserStackEnabled": true,
+    "browserStackOS": "Windows",
+    "browserStackOSVersion": "10"
      ```
   - `npm test`
   - Go to your browserstack ac. and you can observe the output

@@ -1,6 +1,6 @@
 {
   "browser": "chrome",
-  "isHeadless": false,
+  "isHeadless": true,
   "browserStackEnabled": false,
   "browserStackOS": "OS X",
   "browserStackOSVersion": "Big sur",
@@ -8,5 +8,6 @@
   "defaultElementTimeout": 30000,
   "defaultPageLoadTimeout": 30000,
   "defaultTestTimeout": 300000,
-  "juiceShopBaseUrl": "https://juice-shop.herokuapp.com"
+  "stageBaseUrl": "http://juice-shop-web-sample.herokuapp.com/",
+  "prodBaseUrl": "https://juice-shop.herokuapp.com/"
 }

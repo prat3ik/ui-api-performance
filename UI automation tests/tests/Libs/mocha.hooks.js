@@ -24,11 +24,10 @@ beforeEach(async function() {
   browser = await BrowserFactory.createBrowser(this);
   pages = new AllPages();
   // Pages initialization
-
 });
 
 afterEach(async function() {
-  if (this.currentTest.state === "passed") {
+  if (this.currentTest.state !== "passed") {
     const imageFileName = this.currentTest.title + '.jpeg';
     await browser.captureScreenshot(imageFileName, this);
     await browser.savePageSourceToFile(this.currentTest.title)

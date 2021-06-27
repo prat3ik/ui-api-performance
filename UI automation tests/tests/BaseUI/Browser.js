@@ -34,25 +34,27 @@ class Browser {
     }
 
     /**
-     * Get the shopify store base URL.
+     * Get the base URL.
      */
-    getWrapmateBaseUrl() {
+    getBaseUrl() {
         const currentEnv = this.getEnv();
-        if (currentEnv === 'dev')
-            return this.getWrapmateDevBaseUrl();
-        else if (currentEnv === 'beta')
-            return this.getWrapmateBetaBaseUrl();
-        else if (currentEnv === 'stage')
-            return this.getWrapmateStageBaseUrl();
-        else
-            return this.getWrapmateProdBaseUrl();
-    }
+        if (currentEnv === 'stage')
+            return this.getStageBaseUrl();
+        else if (currentEnv === 'prod')
+            return this.getProdBaseUrl();
+      }
 
     /**
-     * Get the Juice Shop application dev URL.
+     * Get the stage base URL.
      */
-    getJuiceShopBaseUrl() {
-        return this.testConfig.juiceShopBaseUrl;
+    getStageBaseUrl() {
+        return this.testConfig.stageBaseUrl;
+    }
+    /**
+     * Get the stage base URL.
+     */
+    getProdBaseUrl() {
+        return this.testConfig.prodBaseUrl;
     }
 
     /**
