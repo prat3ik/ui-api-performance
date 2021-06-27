@@ -108,7 +108,10 @@ Here we are making request to home page of: http://testscenario.com/ and the res
 8) You can see the response graph for all the requests, as you can see the response time is being increased over time.
    ![responseselect](https://drive.google.com/uc?export=view&id=1WK2W4BRdUnybVxSBIOmEJpZFSlR38qQd)
 
-### Q&A
+----------------------------------
+## Q&A
+
+----------------------------------
 #### 1) Did the load test have an impact on web application response time?
 Mostly yes, however it depends on the website under test as well! 
 For the website which has decent server the response time doesn't generally change with normal increase of the users, but for the slow website the response time can increase with even normal increase of users.
@@ -125,6 +128,6 @@ Ideally response time under 1000ms (1sec) can be considered as pretty good! We h
 - Stackoverflow: 3615 ms 
 
 
-#### Video of successful execution: 
+### Video of successful execution:
 1) Fast website load testing: https://drive.google.com/file/d/1Q1gsqTCdlaokhjQW2YXcaUin6ic7zUek/
 2) Slow website load testing: https://drive.google.com/file/d/1HAZ3JwmJVj2eRd84Kb7Wsq9ldksB-w_f/ 
