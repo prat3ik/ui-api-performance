@@ -34,9 +34,11 @@ npm -v // should return valid npm version
 - `mocha`: [Test runner library](https://www.npmjs.com/package/mocha)
 - `selenium-webdriver`: [UI automation library](https://www.npmjs.com/package/selenium-webdriver)
 
-## Description of automation tests
-
+## Description of Automation tests
 **There are 5 tests autoamted and detailed test cases can be found here: https://docs.google.com/spreadsheets/d/1lcHxbokzVWC4_wpxxFPVebBidG1wBZTfBKeWHaNbpjw/**
+
+## Bug report
+**There is one bug found and logged the details here: https://docs.google.com/spreadsheets/d/1KXMoSVISg9dfRq-KWd9IoIfsKgXcma38we06L4B874E/edit#gid=2088996798**
 
 ## How to run
 ### Setup
@@ -90,12 +92,13 @@ npm install
   - Go to your browserstack ac. and you can observe the output
 
 #### 3. Gitlab CI:
-- There are 2 ways the automated tests can be executed on CI
-  1) CRON job: Tests are executing automatically on the set CRON time
-  2) Manual trigger: User can run the tests manually by following below steps:
-    - a
-    - b
-
+We have setup continuous integration(CI) pipeline using GitlabCI, so we can execute the tests over there as well.
+Steps:
+- Move to CI pipeline: https://gitlab.com/prat3ik/toptal-ui-automation/-/pipelines _(NOTE: Toptal gitlab ac. did not have enough permission to build the CI pipeline -- already requested for it)_
+- Click on the Run pipeline button
+  ![run-pipeline](https://drive.google.com/uc?export=view&id=1aZG6Ik0D3M9nfnZvhmRxDGYb_191yxze)
+- Observe the result
+  ![result](https://drive.google.com/uc?export=view&id=1fsKn6O_XsBWQ4zYbR1ayoTi9a6D2elzI)
 
 ### HTML Report
 HTML report will be generated under path: `UI automation tests/TestResults`  at the end of the execution.

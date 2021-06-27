@@ -38,7 +38,7 @@ npm -v // should return valid npm version
  
 - Now using [Authorize user](https://developer.box.com/reference/get-authorize/) and [Request access token](https://developer.box.com/reference/post-oauth2-token/) APIs user can generate the Access token, and that Access token will be passed as Bearer token to Box APIs.
 - 
-## Description of automation tests
+## Description of Automation tests
 Box provides many APIs according to its features, but we have automated the **[Folder](https://developer.box.com/reference/resources/folder/)** API to test its functionality. 
 
 ### Automation workflow:
@@ -75,6 +75,9 @@ _**NOTE:**_ **Detailed steps and test cases can be found here: https://docs.goog
     - Delete folder name by passing the same deleted folder_id 
 6) [GET: Get deleted folder information](https://developer.box.com/reference/get-folders-id/)
     - Get folder details by passing folder_id for newly created folder
+
+## Bug report
+**The detailed sample bug report can be found here: https://docs.google.com/spreadsheets/d/1KXMoSVISg9dfRq-KWd9IoIfsKgXcma38we06L4B874E/edit#gid=2088996798**
 
 ## How to run
 ### Setup
