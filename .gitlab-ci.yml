@@ -1,0 +1,17 @@
+stages:
+  - automation-test
+  
+test:
+  image: node:14.15.3
+  stage: automation-test
+  services:
+    - selenium/standalone-chrome
+  script:
+    - cd "UI automation tests"
+    - npm install
+    - npm test:ci
+  artifacts:
+    when: on_failure
+    paths:
+      - UI\ automation\ tests/TestResults/*
+    expire_in: 1 day
