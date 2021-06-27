@@ -98,6 +98,9 @@ npm install
 
 
 ### HTML Report
+HTML report will be generated under path: `UI automation tests/TestResults`  at the end of the execution.
+- Execute tests: `npm test`
+- Move to: `UI automation tests/TestResults`
+- Open `test-report.html`
 
-
-#### Video of successful execution:
+#### Video of successful execution: 
