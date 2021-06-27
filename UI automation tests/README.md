@@ -32,6 +32,7 @@ npm -v // should return valid npm version
 - `dotenv`: [Env variable management library](https://www.npmjs.com/package/dotenv)
 - `chai`: [Test assertions library](https://www.npmjs.com/package/chai)
 - `mocha`: [Test runner library](https://www.npmjs.com/package/mocha)
+- `mochawesome`: [Test reporting library](https://www.npmjs.com/package/mochawesome)
 - `selenium-webdriver`: [UI automation library](https://www.npmjs.com/package/selenium-webdriver)
 
 ## Description of Automation tests
@@ -41,7 +42,9 @@ npm -v // should return valid npm version
 **There is one bug found and logged the details here: https://docs.google.com/spreadsheets/d/1KXMoSVISg9dfRq-KWd9IoIfsKgXcma38we06L4B874E/edit#gid=2088996798**
 
 ## How to run
-### Setup
+
+-----------------------------
+### Setup:
 **Clone the repo and Install the project dependencies:** `npm install` or `npm ci`
 ```
 git clone https://git.toptal.com/screening/Pratik-K-Patel.git 
@@ -49,7 +52,7 @@ cd UI\ automation\ tests/
 npm install 
 ```
 
-### Execution
+### Execution:
 #### 1. Local:
 ***
 - Open `testconfig.json`.
@@ -106,4 +109,6 @@ HTML report will be generated under path: `UI automation tests/TestResults`  at 
 - Move to: `UI automation tests/TestResults`
 - Open `test-report.html`
 
-#### Video of successful execution: 
+----------------------------------------------
+#### Video of setup and successful local execution:
+**https://drive.google.com/file/d/1NYN4uZOiG-4FkdFgdeGtzgcgL8p9JFmn/**
