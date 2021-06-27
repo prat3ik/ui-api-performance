@@ -53,23 +53,26 @@ npm install
 ```
 
 ### Execution:
-#### 1. Local:
-***
-- Open `testconfig.json`.
-- In order to execute the test case, set the below parameters in `testconfig.json` file.
+#### 1. Local
+**1) To run the tests on your local normal chrome browser:**
+- Open `testconfig.json` and set the below parameters:
+    ```
+    "browserStackEnabled": false
+    "isHeadless": false
+    ```
+- `npm test`
+- The HTML/JSON reports would be generated inside `UI automation tests/TestResults`
+
+**2) To run the tests on your local chrome browser but with headless mode(browser will not open here, but work in backend)**
+- On `testconfig.json` do set the below parameters:
     ```
     "browserStackEnabled": false
     "isHeadless": true
     ```
-- Now you can execute test either via IDE or CLI (`npm test`) as described on above section.
-- **To run the tests on your local chrome browser**
-  - Make sure `"isHeadless": false` on `testconfig.json`
-  - `npm test`
-  - The HTML reports would be generated inside `API automation ___`
+- `npm test`
+- And HTML/JSON reports can be found inside: `UI automation tests/TestResults`
 
-- **To run the tests on your local chrome browser but with headless mode**
-  - Set `"isHeadless": true` on `testconfig.json`
-  - `npm test`
+_**NOTE:**_ _If there are any test failures, then the screenshot of the failure can be found inside: `UI automation tests/TestResults/screenshots`_ 
 
 #### 2. Browserstack (Remote):
 - **To run the tests on Chrome on MacOS X OS**
@@ -103,11 +106,12 @@ Steps:
 - Observe the result
   ![result](https://drive.google.com/uc?export=view&id=1fsKn6O_XsBWQ4zYbR1ayoTi9a6D2elzI)
 
-### HTML Report
-HTML report will be generated under path: `UI automation tests/TestResults`  at the end of the execution.
+### HTML/JSON Reports
+HTML & JSON reports will be generated under path: `UI automation tests/TestResults`  at the end of the execution.
 - Execute tests: `npm test`
 - Move to: `UI automation tests/TestResults`
-- Open `test-report.html`
+- Open HTML report`test-report.html`
+- OR open JSON report `test-report.json`
 
 ----------------------------------------------
 #### Video of setup and successful local execution:
