@@ -9,7 +9,7 @@ test:
   script:
     - cd "UI automation tests"
     - npm install
-    - npm test:ci
+    - npm run test:ci
   artifacts:
     when: on_failure
     paths:
