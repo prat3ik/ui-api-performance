@@ -1,4 +1,4 @@
-# TOPTAL - UI automation of Juice shop website using Selenium test automation framework
+# Sample - UI automation of Juice shop website using Selenium test automation framework
 
 **UI API automation for Juice shop website (demo app) using Selenium.**
 
@@ -47,7 +47,6 @@ npm -v // should return valid npm version
 ### Setup:
 **Clone the repo and Install the project dependencies:** `npm install` or `npm ci`
 ```
-git clone https://git.toptal.com/screening/Pratik-K-Patel.git 
 cd UI\ automation\ tests/ 
 npm install 
 ```
@@ -100,7 +99,7 @@ _**NOTE:**_ _If there are any test failures, then the screenshot of the failure 
 #### 3. Gitlab CI:
 We have setup continuous integration(CI) pipeline using GitlabCI, so we can execute the tests over there as well.
 Steps:
-- Move to CI pipeline: https://gitlab.com/prat3ik/toptal-ui-automation/-/pipelines _(NOTE: Toptal gitlab ac. did not have enough permission to build the CI pipeline -- already requested for it)_
+- Move to CI pipeline
 - Click on the Run pipeline button
   ![run-pipeline](https://drive.google.com/uc?export=view&id=1aZG6Ik0D3M9nfnZvhmRxDGYb_191yxze)
 - Observe the result

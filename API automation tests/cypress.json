@@ -5,7 +5,7 @@
     "charts": true,
     "embeddedScreenshots": false,
     "reportDir": "cypress/report",
-    "reportPageTitle": "Toptal - Box API automation"
+    "reportPageTitle": "Sample - Box API automation"
   },
   "video": false,
   "screenshotsFolder": "images",

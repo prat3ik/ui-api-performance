@@ -1,4 +1,4 @@
-describe("TOPTAL - Box API automation tests", function () {
+describe("Sample - Box API automation tests", function () {
     let accessToken;
     const generalFolderName = `test-folder-${Date.now()}`;
     const newFolderName = `new-folder-${Date.now()}`;

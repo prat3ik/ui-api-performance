@@ -1,4 +1,4 @@
-# TOPTAL - API automation of Box using Cypress test framework
+# Sample - API automation of Box using Cypress test framework
 
 **REST API automation for Box (cloud storage) APIs using Cypress.**
 
@@ -83,7 +83,6 @@ _**NOTE:**_ **Detailed steps and test cases can be found here: https://docs.goog
 ### Setup
 **Clone the repo and Install the project dependencies:** `npm install` or `npm ci`
 ```
-git clone https://git.toptal.com/screening/Pratik-K-Patel.git 
 cd API\ automation\ tests/ 
 npm install 
 ```

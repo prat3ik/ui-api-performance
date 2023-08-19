@@ -1,4 +1,4 @@
-# TOPTAL - Load testing of website(HTTP/S protocol) using JMeter
+# Sample - Load testing of website(HTTP/S protocol) using JMeter
 
 In this project you will find 2 samples for which we have done Load testing:
 1) Fast website
@@ -90,7 +90,7 @@ Here we are making request to home page of: http://testscenario.com/ and the res
 ## How to run
 ### Setup
 
-1) Clone the repo: `git clone https://git.toptal.com/screening/Pratik-K-Patel.git`
+1) Clone the repo
 2) Move to Load tests: `cd "Load tests"` and you will find 2 `.jmx` files
    ![jmx-files](https://drive.google.com/uc?export=view&id=1QSUUn2xYfopEsZg6LPVJMz4GkFA24A49)
 
